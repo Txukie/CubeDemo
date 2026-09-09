@@ -1,3 +1,4 @@
 build/
 CubeDemo
 *.o
+.git-credentials-cubedemo
