@@ -1,6 +1,6 @@
 # CMakeLists.txt for a simple OpenGL project using GLFW, GLAD, and GLM
 cmake_minimum_required(VERSION 3.20)
-project(CubeDemo LANGUAGES CXX)
+project(CubeDemo LANGUAGES C CXX)
 
 # Use C++20 for convenience
 set(CMAKE_CXX_STANDARD 20)
@@ -12,13 +12,17 @@ find_package(OpenGL REQUIRED)
 find_package(glfw3 REQUIRED)
 
 # Add GLAD via system package
-find_package(glad REQUIRED)
+# find_package(glad REQUIRED)
 
 # Add executable
-add_executable(CubeDemo src/main.cpp)
+add_executable(CubeDemo 
+	src/main.cpp
+	external/glad/src/gl.c
+)
 
 # Link libraries
-target_link_libraries(CubeDemo PRIVATE glfw glad OpenGL::GL)
+target_include_directories(CubeDemo PRIVATE external/glad/include)
+target_link_libraries(CubeDemo PRIVATE glfw OpenGL::GL)
 
 # macOS specific framework linking
 if(APPLE)
