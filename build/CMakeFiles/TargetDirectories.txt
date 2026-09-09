@@ -1,0 +1,3 @@
+/home/txukie/Claude/build/CMakeFiles/CubeDemo.dir
+/home/txukie/Claude/build/CMakeFiles/edit_cache.dir
+/home/txukie/Claude/build/CMakeFiles/rebuild_cache.dir
